@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.novel-analysis/schemas/entity.schema.json",
+  "title": "Canonical Entity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "book_id", "entity_id", "entity_type", "canonical_name", "aliases", "first_chapter", "status"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "book_id": {"type": "string"},
+    "entity_id": {"type": "string", "pattern": "^[A-Z]{2,4}-[0-9]{5}$"},
+    "entity_type": {"enum": ["character", "location", "faction", "item", "ability", "concept"]},
+    "canonical_name": {"type": "string", "minLength": 1},
+    "aliases": {"type": "array", "items": {"type": "string"}},
+    "first_chapter": {"type": "integer", "minimum": 0},
+    "last_chapter": {"type": ["integer", "null"], "minimum": 0},
+    "status": {"enum": ["active", "inactive", "destroyed", "dead", "unknown"]},
+    "notes": {"type": ["string", "null"]}
+  }
+}

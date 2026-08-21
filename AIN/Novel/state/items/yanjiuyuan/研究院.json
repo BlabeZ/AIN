@@ -1,0 +1,12 @@
+{
+  "item": "研究院",
+  "type": "artifact",
+  "status": "severely_damaged",
+  "current_layer": "L1",
+  "unlocked_layers": ["L1_锚定系统（部分运行）"],
+  "locked_layers": ["L2_观测层·分析阵列", "L3_实验层·生命实验区", "L4_存储层·样本库", "L5_工程层·制造修复阵列", "L6_空间层·庇护隔离区", "L7_跃迁层·跨界导航"],
+  "known_memory_fragments": [],
+  "current_host": "关明衡",
+  "last_updated_chapter": 0,
+  "note": "state 只存变量（当前恢复层/已解锁系统）；七层系统静态定义与阶段表见 bible/locations.md，功能/出身/展现节奏/剧情支点见 bible/world.md。**总修复度不设百分比**（ref03-4/ref14）。后续解锁计划见 outline/volume_02.md（L2 分析阵列）与 volume_03.md（L6 庇护隔离区）。"
+}

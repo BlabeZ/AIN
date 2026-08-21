@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "方案使用 init、ingest 和 validate 的确定性导入链路",
+      "passed": false,
+      "evidence": "响应只提出本地读取、章节切分、目录和字数统计，没有提及或使用 `init`、`ingest`、`validate` 链路。"
+    },
+    {
+      "text": "方案选择覆盖开篇、中段、后段和结尾的连续试拆窗口",
+      "passed": true,
+      "evidence": "响应明确从“开篇、中期、后期、结尾四个区段”取样，且“每段优先选连续 3–5 章”。"
+    },
+    {
+      "text": "方案禁止把整本小说放入一次模型调用",
+      "passed": true,
+      "evidence": "响应明确写道“不把 450 万字全文上传给模型”，模型只接收样本和必要的局部上下文。"
+    },
+    {
+      "text": "方案包含短引文落锚、facts 验证和失败时停止的质量关卡",
+      "passed": false,
+      "evidence": "响应没有要求短引文落锚、facts 验证，也没有规定验证失败即停止的质量关卡。"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.novel-analysis/schemas/chapter_annotation.schema.json",
+  "title": "Chapter Structural Annotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "book_id",
+    "chapter_id",
+    "protagonist_goal",
+    "conflicts",
+    "emotional_curve",
+    "payoffs",
+    "rewards",
+    "hook",
+    "confidence"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "book_id": {"type": "string"},
+    "chapter_id": {"type": "integer", "minimum": 0},
+    "protagonist_goal": {"type": ["string", "null"]},
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "opponent", "stakes", "event_ids"],
+        "properties": {
+          "type": {"enum": ["resource", "survival", "status", "relationship", "information", "values", "other"]},
+          "opponent": {"type": ["string", "null"]},
+          "stakes": {"type": ["string", "null"]},
+          "event_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "emotional_curve": {"type": "array", "items": {"type": "string"}},
+    "payoffs": {"type": "array", "items": {"type": "string"}},
+    "rewards": {"type": "array", "items": {"type": "string"}},
+    "next_opportunity": {"type": ["string", "null"]},
+    "next_conflict": {"type": ["string", "null"]},
+    "hook": {
+      "type": ["object", "null"],
+      "properties": {
+        "type": {"enum": ["crisis", "information", "benefit", "identity", "combat", "decision", "delayed_result", "character", "none"]},
+        "content": {"type": "string"},
+        "strength": {"type": "integer", "minimum": 0, "maximum": 3},
+        "evidence_event_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["type", "content", "strength", "evidence_event_ids"],
+      "additionalProperties": false
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "alternative_interpretations": {"type": "array", "items": {"type": "string"}}
+  }
+}

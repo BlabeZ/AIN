@@ -1,0 +1,22 @@
+# Python caches and local environments
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+**/.pytest_cache/
+**/.coverage
+**/.coverage.*
+**/.venv/
+**/venv/
+
+# JavaScript dependencies
+**/node_modules/
+
+# Local credentials and certificates
+**/.env
+**/.env.*
+!**/.env.example
+**/*.pem
+**/*.key
+
+# OS metadata
+.DS_Store

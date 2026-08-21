@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "note": "仅记录当前人物位置（story 已确立事实），用于防止瞬移/地点冲突；地点本身的归属见 bible/locations.md。body 写完后按章节更新 last_updated_chapter。",
+  "positions": {
+    "关明衡": {
+      "location": "临江市第三中学（家：老城区）",
+      "status": "active",
+      "last_updated_chapter": 3
+    },
+    "关志远": {
+      "location": "临江市老城区（夜班出租）",
+      "status": "active",
+      "last_updated_chapter": 3
+    },
+    "周磊": {
+      "location": null,
+      "status": "missing",
+      "last_known_location": "临江市第三中学（ch3 班主任宣布转学，但课桌物证全在、主角怀疑非转学）",
+      "last_updated_chapter": 3
+    },
+    "林小满": {
+      "location": "临江市第三中学",
+      "status": "active",
+      "last_updated_chapter": 3
+    },
+    "主脑": {
+      "location": "研究院（口袋空间，锚定于关明衡）",
+      "status": "bound",
+      "last_updated_chapter": 3
+    }
+  }
+}

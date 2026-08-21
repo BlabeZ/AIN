@@ -1,0 +1,28 @@
+{
+  "schema_version": 2,
+  "note": "当前快照（索引，非新真相来源）。canon_through_chapter 表示正文已定稿到第几章；其值为 0 时，state 各文件当前均为'按大纲预置的创作基线'，正文定稿后必须先更新 state 与本站再做后续创作。",
+  "canon_through_chapter": 3,
+  "baseline_through_chapter": 10,
+  "current_volume": "卷一",
+  "current_arc": "arc_001",
+  "story_day": 2,
+  "hero": {
+    "level": 1,
+    "public_level": 1,
+    "clone_count": 1,
+    "public_clone_count": 0,
+    "note": "ch2 首个分身具现（clone_A，不稳定/短时）；ch3 课间学校初试（托管状态撞回收式限制）。clone_A 仍未公开，ch8 注册才公开"
+  },
+  "research_institute": {
+    "current_layer": "L1",
+    "unlocked_layers": [
+      "L1_锚定系统（部分运行）"
+    ],
+    "note": "七层系统制，不设总百分比（ref14）"
+  },
+  "active_plotlines": [
+    "f001",
+    "f002"
+  ],
+  "state_files_version": 2
+}

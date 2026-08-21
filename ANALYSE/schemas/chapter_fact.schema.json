@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.novel-analysis/schemas/chapter_fact.schema.json",
+  "title": "Chapter Fact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "book_id",
+    "chapter_id",
+    "source_sha256",
+    "events",
+    "information_reveals",
+    "state_changes",
+    "clue_candidates",
+    "unknowns",
+    "extractor"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "book_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"},
+    "chapter_id": {"type": "integer", "minimum": 0},
+    "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "pov": {"$ref": "#/$defs/entityRef"},
+    "locations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/entityRef"}
+    },
+    "characters": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/entityRef"}
+    },
+    "events": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/event"}
+    },
+    "information_reveals": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/reveal"}
+    },
+    "state_changes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/stateChange"}
+    },
+    "clue_candidates": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/clueCandidate"}
+    },
+    "ending_excerpt": {"$ref": "#/$defs/evidence"},
+    "unknowns": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "extractor": {"$ref": "#/$defs/provenance"}
+  },
+  "$defs": {
+    "entityRef": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "entity_id": {"type": ["string", "null"]},
+        "name": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["quote", "occurrence"],
+      "properties": {
+        "quote": {"type": "string", "minLength": 1, "maxLength": 200},
+        "occurrence": {"type": "integer", "minimum": 1},
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 1}
+      }
+    },
+    "evidenceList": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "summary", "evidence", "confidence"],
+      "properties": {
+        "event_id": {"type": "string", "pattern": "^C[0-9]{6}-E[0-9]{3}$"},
+        "summary": {"type": "string", "minLength": 1},
+        "actors": {"type": "array", "items": {"$ref": "#/$defs/entityRef"}},
+        "action": {"type": ["string", "null"]},
+        "target": {"type": ["string", "null"]},
+        "outcome": {"type": ["string", "null"]},
+        "evidence": {"$ref": "#/$defs/evidenceList"},
+        "confidence": {"$ref": "#/$defs/confidence"}
+      }
+    },
+    "reveal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reveal_id", "content", "known_by", "evidence", "confidence"],
+      "properties": {
+        "reveal_id": {"type": "string", "pattern": "^C[0-9]{6}-I[0-9]{3}$"},
+        "content": {"type": "string", "minLength": 1},
+        "known_by": {"type": "array", "items": {"$ref": "#/$defs/entityRef"}},
+        "evidence": {"$ref": "#/$defs/evidenceList"},
+        "confidence": {"$ref": "#/$defs/confidence"}
+      }
+    },
+    "stateChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["change_id", "subject", "field", "before", "after", "evidence", "confidence"],
+      "properties": {
+        "change_id": {"type": "string", "pattern": "^C[0-9]{6}-S[0-9]{3}$"},
+        "subject": {"$ref": "#/$defs/entityRef"},
+        "field": {"type": "string", "minLength": 1},
+        "before": {},
+        "after": {},
+        "evidence": {"$ref": "#/$defs/evidenceList"},
+        "confidence": {"$ref": "#/$defs/confidence"}
+      }
+    },
+    "clueCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_id", "content", "reason", "evidence", "confidence"],
+      "properties": {
+        "candidate_id": {"type": "string", "pattern": "^C[0-9]{6}-L[0-9]{3}$"},
+        "content": {"type": "string", "minLength": 1},
+        "reason": {"type": "string", "minLength": 1},
+        "evidence": {"$ref": "#/$defs/evidenceList"},
+        "confidence": {"$ref": "#/$defs/confidence"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent", "prompt_version"],
+      "properties": {
+        "agent": {"type": "string"},
+        "model": {"type": ["string", "null"]},
+        "prompt_version": {"type": "string"},
+        "run_id": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

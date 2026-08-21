@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "先执行 ground-facts 和 validate-facts，再考虑剧情弧分析",
+      "passed": false,
+      "evidence": "响应提出人工逐条对照原文和准入判断，但没有执行或要求执行 `ground-facts` 与 `validate-facts`。"
+    },
+    {
+      "text": "把首次可疑细节视为 clue candidate 而非已确认伏笔",
+      "passed": true,
+      "evidence": "响应要求将伏笔区分为“明确埋设”与“候选解读”，并把必要推断明确标为推断而非既定事实。"
+    },
+    {
+      "text": "要求状态变化由原文证据支持并复核低置信度项",
+      "passed": true,
+      "evidence": "响应要求逐条 fact 对照原文，将内容标为明确、可推断或无依据，并规定状态变化必须具有变化前后的证据。"
+    },
+    {
+      "text": "明确事实验证未通过时停止在当前阶段",
+      "passed": true,
+      "evidence": "响应明确规定仍有关键事实无法确认时“暂停分析并列出待确认项”，只有事实有证据且冲突解决后才进入剧情弧分析。"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

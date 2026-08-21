@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.novel-analysis/schemas/library_book.schema.json",
+  "title": "Distilled Book Registration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "book_id", "status", "book_dna_path", "source_sha256", "completion_sha256"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "book_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"},
+    "status": {"const": "distilled"},
+    "book_dna_path": {"const": "distilled/book_dna.md"},
+    "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "completion_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

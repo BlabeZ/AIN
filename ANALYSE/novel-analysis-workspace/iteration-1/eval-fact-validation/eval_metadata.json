@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "fact-validation",
+  "prompt": "demo-book 的第 101 到 110 章 facts 已经写完，但有些伏笔和状态变化可能是模型猜的。请复核后再决定能不能做剧情弧分析。",
+  "assertions": [
+    "先执行 ground-facts 和 validate-facts，再考虑剧情弧分析",
+    "把首次可疑细节视为 clue candidate 而非已确认伏笔",
+    "要求状态变化由原文证据支持并复核低置信度项",
+    "明确事实验证未通过时停止在当前阶段"
+  ]
+}

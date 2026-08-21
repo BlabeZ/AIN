@@ -1,0 +1,61 @@
+{
+  "schema_version": 3,
+  "note": "追踪'谁认为谁是谁'（分身流/幕后流关键），subject 可以是 Person，也可以是 Persona（见 identities.json）。每条认知必须标注 truth_level：truth（作者真相）/ confirmed（角色已证实）/ suspected（某角色推测）/ rumor（江湖传闻）/ false（错误信息）。**传闻与推测严禁写成事实**；主角开始制造假情报后，'假的东西在故事世界里也必须被认真保存'。真值见 current.json 与 identities.json。state 中没有未来：只列已定稿正文/已冻结大纲确立的关系。",
+  "perceptions": [
+    {
+      "observer": "关志远",
+      "subject": "关明衡（Person）",
+      "relation": "父子",
+      "truth_level": "truth",
+      "trust": "high",
+      "knows_true_identity": false,
+      "notes": "不知儿子觉醒；主角的保护线",
+      "last_updated_chapter": 0
+    },
+    {
+      "observer": "主脑",
+      "subject": "关明衡（Person）",
+      "relation": "绑定对象/宿主/钥匙",
+      "truth_level": "truth",
+      "trust": "dependent",
+      "knows_true_identity": true,
+      "notes": "毒舌导师；只知被主角觉醒信号激活、能力同频；疑其来历（深层谜）",
+      "last_updated_chapter": 0
+    },
+    {
+      "observer": "协调局临江办事处",
+      "subject": "关明衡·协调局特训生（Persona）",
+      "relation": "特训生（见习）",
+      "truth_level": "planned",
+      "trust": "none",
+      "knows_true_identity": false,
+      "known_level": null,
+      "known_clone_count": null,
+      "suspects": [],
+      "notes": "计划关系（ch8 入编后成立，D-063 清理）：低权限数据岗（旧案电子化/录入/数据清洗），不显眼，报弱报短",
+      "last_updated_chapter": 0,
+      "status": "planned",
+      "planned_establish_chapter": 8
+    },
+    {
+      "observer": "林小满",
+      "subject": "关明衡（Person）",
+      "relation": "前桌·朋友（友情）",
+      "truth_level": "confirmed",
+      "trust": "medium",
+      "knows_true_identity": false,
+      "notes": "不知其觉醒；同学+朋友友情，前期无感情线（D-031）",
+      "last_updated_chapter": 0
+    },
+    {
+      "observer": "周磊",
+      "subject": "关明衡（Person）",
+      "relation": "同班同学",
+      "truth_level": "confirmed",
+      "trust": "low",
+      "knows_true_identity": false,
+      "notes": "失踪前交集不多；其失忆/残留属第二卷计划（见 outline/volume_02.md），未发生不提前入 state",
+      "last_updated_chapter": 0
+    }
+  ]
+}

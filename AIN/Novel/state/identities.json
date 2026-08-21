@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "note": "本书核心数据模型：Person(真实主体) → Clone(分身体) → Persona(公开身份)。规则：①假死死的是 Persona 或 Clone，不一定是 Person；②回收/消散消失的是 Clone Instance，Persona 可能继续存在（如'百面'可换 Clone 续演）；③'某势力怀疑百面背后有人'是对 Persona 关系的认知（truth_level=rumor/suspected），不得写成对关明衡本人的事实。正文与状态的一切身份变动（出场、假死、回收、换装、认知变化）必须同步本文件。④**核心身份 vs 临时实例（ref22）**：有剧情重量的核心 Persona（姓名/外貌/DNA/履历/关系/账户/力量体系/生活轨迹）全书控制在 5-8 个；其余 Clone 是临时工具体（无社会人格，数量可多，不算角色）。⑤分身=同一意识多运行端（前中期非独立人格），详见 clone_rules.md。",
+  "persons": {
+    "关明衡": {
+      "name": "关明衡",
+      "type": "hero",
+      "is_clone_root": true,
+      "clones": [
+        "clone_A",
+        "clone_B",
+        "clone_C"
+      ],
+      "personas": [
+        "关明衡·协调局特训生"
+      ],
+      "file": "characters/main/关明衡.md",
+      "status": "alive"
+    }
+  },
+  "clones": {
+    "clone_A": {
+      "id": "clone_A",
+      "root": "关明衡",
+      "status": "active",
+      "persona": "百面",
+      "appearance": "与本体相同（未解锁外貌塑造）",
+      "created_chapter": 2,
+      "active_from_chapter": 2,
+      "notes": "首个分身，ch2 首次具现（短时/站不稳）；佣兵身份载体；心性更'放得开'（行为惯性，见 clone_rules）。ch3 课间学校初试撞托管/回收式限制"
+    },
+    "clone_B": {
+      "id": "clone_B",
+      "root": "关明衡",
+      "status": "planned",
+      "persona": "神秘买家",
+      "appearance": "与本体相同",
+      "created_chapter": null,
+      "active_from_chapter": null,
+      "notes": "拍卖会/黑市买主身份载体；与 clone_A 同源需严格错开时空与证据（独立基因前）"
+    },
+    "clone_C": {
+      "id": "clone_C",
+      "root": "关明衡",
+      "status": "planned",
+      "persona": null,
+      "appearance": null,
+      "created_chapter": null,
+      "active_from_chapter": null,
+      "notes": "第三分身，计划于'百面正式进入阿尔登之后'出现（第四需求：本体/百面/买家占满后需要自由执行者，ref22）；首次以无名工具人身份登场（不建立人设，身份后续自己长出来），散修 Persona 为其后续形态"
+    }
+  },
+  "personas": {
+    "关明衡·协调局特训生": {
+      "name": "关明衡",
+      "owner_clone": null,
+      "owner_person": "关明衡",
+      "domain": "官方",
+      "status": "planned",
+      "planned_debut_chapter": 8,
+      "external_identity": { "faction": "协调局临江办事处", "known_level": null, "known_clone_count": null },
+      "notes": "本体公开身份（未来）；报弱报短，隐藏研究院与真实分身数。正文 ch1-3 尚未注册，ch8 入编协调局后才成立（D-063 清理：不超前写入当前事实）"
+    },
+    "百面": {
+      "name": "百面",
+      "owner_clone": "clone_A",
+      "owner_person": "关明衡",
+      "domain": "黑市/佣兵",
+      "status": "planned",
+      "debut_chapter": 23,
+      "external_identity": {
+        "faction": "金水物业门下黑市街",
+        "known_level": null,
+        "known_clone_count": null
+      },
+      "notes": "地下佣兵名号，不露真容；'背后有神秘供货商'为江湖传闻（truth_level=rumor，非事实，见 foreshadowing f005）"
+    },
+    "神秘买家": {
+      "name": "神秘买家",
+      "owner_clone": "clone_B",
+      "owner_person": "关明衡",
+      "domain": "地下拍卖会",
+      "status": "planned",
+      "debut_chapter": 25,
+      "external_identity": {
+        "faction": "金水物业担保",
+        "known_level": null,
+        "known_clone_count": null
+      },
+      "notes": "马甲由剧情需求长出来（ref29）：ch25 只是临时买东西的人→ch28 第二次出手后'什么来路？'→身份慢慢成形；与百面无公开往来表象"
+    },
+    "某散修": {
+      "name": "某散修",
+      "owner_clone": null,
+      "owner_person": "关明衡",
+      "domain": "江湖/散修圈",
+      "status": "planned",
+      "debut_chapter": null,
+      "external_identity": {},
+      "notes": "分身 C 的散修身份，未定名未出道"
+    }
+  }
+}

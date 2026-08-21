@@ -1,0 +1,16 @@
+{
+  "character": "关明衡",
+  "file": "characters/main/关明衡.md",
+  "status": "alive",
+  "location": "临江市第三中学（家：老城区）",
+  "power_level": 1,
+  "public_power_level": 1,
+  "clone_count": 1,
+  "public_clone_count": 0,
+  "powers": [
+    "分身（复现型觉醒；ch2 首次具现 clone_A，不稳定/短时；回收式记忆同步，单实时视角其余托管；槽位=1；硬规则见 bible/clone_rules.md）",
+    "透视（研究院方向性扫描副作用，片段式：一次几十秒、约 20 分钟一次，仅覆盖视线方向与周边，非城市级；ch2 主脑揭穿非本人能力）"
+  ],
+  "note": "觉醒+研究院锚定；报弱报短，隐藏记忆同步与数量上限。ch2 首个分身；ch3 学校初试撞托管/回收式限制；ch3 末'下一个会不会是我'主线启动（自保动机）。",
+  "last_updated_chapter": 3
+}

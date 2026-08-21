@@ -1,0 +1,94 @@
+{
+  "schema_version": 2,
+  "note": "仅记录正文已定稿的事件顺序；正文未写时事件标注 status=planned（当前为按大纲预置的创作基线，canon_through_chapter=0）。分身流/多身份入场后，本文件是防时间线冲突的核心基建。",
+  "timeline": [
+    {
+      "id": "t001",
+      "status": "recorded",
+      "chapter": 1,
+      "story_date": "故事第 1 日",
+      "story_time": "午休（闪回）",
+      "location": "临江市第三中学",
+      "participants": ["关明衡"],
+      "event": "觉醒分身能力，研究院锚定（本人仅一阵头痛）；视为中暑未当回事；第一次透视触发（看向林小满，看到骨架，以为眼花）",
+      "visibility": "对外不可见"
+    },
+    {
+      "id": "t002",
+      "status": "recorded",
+      "chapter": 1,
+      "story_date": "故事第 1 日",
+      "story_time": "最后一节自习课",
+      "location": "临江市第三中学",
+      "participants": ["关明衡"],
+      "event": "第三次主动测试'透视'（盯墙角水管约四十七秒，看穿建筑结构）；试图控制失败——完全不能主动触发；扫描结束后担忧教室监控拍到眼睛异样，决定对所有人隐藏，包括父亲",
+      "visibility": "对外不可见"
+    },
+    {
+      "id": "t003",
+      "status": "recorded",
+      "chapter": 1,
+      "story_date": "故事第 1 日",
+      "story_time": "下午（触发后）",
+      "location": "临江市第三中学",
+      "participants": ["关明衡", "邻座"],
+      "event": "注意到后排周磊的位置从午后一直空着，邻座随口'请假吧'（一闪，不调查）",
+      "visibility": "对外不可见"
+    },
+    {
+      "id": "t004",
+      "status": "recorded",
+      "chapter": 1,
+      "story_date": "故事第 1 日",
+      "story_time": "当夜",
+      "location": "老城区家中",
+      "participants": ["关明衡"],
+      "event": "准备再'试透视'，视野中出现旋转六边形；手机拍不到、录像也没有；伸手将至未至——**止步，不入研究院（D-004）**；意识模糊前浮现机械信息'连接恢复。'（D-060，未解释）",
+      "visibility": "对外不可见"
+    },
+    {
+      "id": "t005",
+      "status": "recorded",
+      "chapter": 2,
+      "story_date": "故事第 1 日深夜/第 2 日",
+      "story_time": "夜",
+      "location": "研究院（口袋空间）",
+      "participants": ["关明衡", "主脑"],
+      "event": "被拉入研究院：主脑苏醒（启用语音协议）；'透视非本人能力'=扫描副作用；复现型真能力揭晓（钥匙与锁表层）；首次具现第一个分身（短时、站不稳）；撞回收式记忆与槽位限制（当前稳定实例槽位：1）；碎片词'星…海…'（f003）",
+      "visibility": "主脑/关明衡（外部不可见）"
+    },
+    {
+      "id": "t006",
+      "status": "recorded",
+      "chapter": 3,
+      "story_date": "故事第 2 日",
+      "story_time": "课间",
+      "location": "临江市第三中学",
+      "participants": ["关明衡", "主脑（远程）"],
+      "event": "分身学校初试：派分身去小卖部买笔芯，本体留教室；林小满借橡皮致注意力切换→分身进入托管状态→擅自答应借饭卡；回收式记忆合流才知道。决定不在学校用分身干需说话的事",
+      "visibility": "对外不可见"
+    },
+    {
+      "id": "t007",
+      "status": "recorded",
+      "chapter": 3,
+      "story_date": "故事第 2 日",
+      "story_time": "上午最后一节",
+      "location": "临江市第三中学",
+      "participants": ["关明衡", "班主任", "邻座"],
+      "event": "班主任宣布周磊转学（手续昨天办完）；关明衡路过后排见周磊课桌：书/练习册/笔/书包全在（物证回扣 ch1 微号）；'转学却什么都没带走'起疑",
+      "visibility": "班级公开"
+    },
+    {
+      "id": "t008",
+      "status": "recorded",
+      "chapter": 3,
+      "story_date": "故事第 2 日",
+      "story_time": "下午",
+      "location": "临江市第三中学",
+      "participants": ["关明衡", "林小满"],
+      "event": "林小满闲聊提及周磊转学前去过校医室说头疼；关明衡联想自己觉醒前午休头痛→'下一个会不会是我'主线启动，并决定放学后先向门卫查证（自保动机，D-005）",
+      "visibility": "对外不可见"
+    }
+  ]
+}

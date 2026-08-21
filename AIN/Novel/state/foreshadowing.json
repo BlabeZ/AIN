@@ -1,0 +1,129 @@
+{
+  "schema_version": 2,
+  "status_flow": [
+    "planned",
+    "planted",
+    "developing",
+    "paid_off",
+    "cancelled"
+  ],
+  "type_taxonomy": {
+    "mystery": "长期谜题",
+    "clue": "案件线索",
+    "setup": "未来剧情铺垫",
+    "reveal_gate": "信息释放限制（读者/主角知识解锁表）",
+    "promise": "明确给读者的后续承诺"
+  },
+  "note": "state 中没有未来：status 只反映正文已发生的事实。正文未写的伏笔一律 planned（只填 planned_plant / planned_payoff，actual_* 保持 null）；对应章节定稿后才改为 planted/developing 并填 actual_plant。type 区分伏笔性质；reveal 字段用于研究院/方舟这类顶级秘密的'当前允许写到哪一级'。本章层写法与可透露规则见 foreshadowing.md。",
+  "foreshadowing": [
+    {
+      "id": "f001",
+      "type": "mystery",
+      "status": "developing",
+      "planned_plant": "第 1 章（夜里视野中六边形轮廓浮现）",
+      "actual_plant": "第 1 章（夜里视野中旋转六边形浮现，手机拍不到；伸手将至未至，止步；意识模糊前浮现机械信息'连接恢复。'，未解释）；第 2 章（意识接入研究院/主脑苏醒；'透视非本人能力'=扫描副作用；钥匙与锁表层答案；'为什么是我'深层保留）",
+      "planned_payoff": "大后期：恢复研究院历史记录，确认身世及损毁原因（四层答案；不进入故土，新世界同盟=世界观远景）",
+      "actual_payoff": null,
+      "related_characters": [
+        "关明衡",
+        "主脑"
+      ],
+      "related_factions": [
+        "研究院"
+      ],
+      "reveal": {
+        "hero_knowledge_level": 1,
+        "reader_reveal_level": 1,
+        "schedule": "第 2 章给'同频/钥匙与锁'表层答案，深层疑问留到大后期"
+      }
+    },
+    {
+      "id": "f002",
+      "type": "clue",
+      "status": "developing",
+      "planned_plant": "第 3 章（周磊'转学'宣布：书/书包都还在；第一章已有空座一闪）",
+      "actual_plant": "第 1 章（周磊空座闲聊名字一闪，主角零反应）；第 3 章（班主任宣布转学；课桌书/笔/书包全在=物证只做读者镜头、主角普通化处理，头疼关联在章末激活物证；林小满提周磊转学前校医室头疼→主角联想自己觉醒前头痛→'下一个会不会是我'自保动机启动，并决定放学后先问门卫，D-005；**停在异常消失+自保疑虑，不提黑车/下一辆车，黑车证据留 ch4-5**）",
+      "planned_payoff": "第二卷：阿尔登国际能力资产化实验网络（失踪者混合异能残留→旧厂区）",
+      "actual_payoff": null,
+      "related_characters": [
+        "周磊",
+        "关明衡"
+      ],
+      "related_factions": [
+        "阿尔登国际亚太分部",
+        "阿尔登国际实验网络"
+      ]
+    },
+    {
+      "id": "f003",
+      "type": "reveal_gate",
+      "status": "planted",
+      "planned_plant": "第 2 章（主脑苏醒时的记忆碎片：战争、工厂、星海）",
+      "actual_plant": "第 2 章（主脑自检碎片词'星…海…'滑过台面，'源数据缺失'；以残存系统输出形式呈现，非记忆闪回）",
+      "planned_payoff": "大后期：身世回收——恢复历史记录确认新世界同盟与殖民战争（原文明未知/不可达，不进入；故土=天花板），可选尾声=远方握手信号",
+      "actual_payoff": null,
+      "related_characters": [
+        "主脑"
+      ],
+      "related_factions": [
+        "研究院",
+        "新世界同盟",
+        "企业联合"
+      ],
+      "reveal": {
+        "hero_knowledge_level": 1,
+        "reader_reveal_level": 1,
+        "schedule": "卷1-3 碎片词（战争/工厂/星海）→ 卷4-5 '自动工厂''拓殖舰队' → 中后期霸权名 → 大后期完整（信息解锁表，防 AI 正文顺嘴剧透）"
+      }
+    },
+    {
+      "id": "f004",
+      "type": "clue",
+      "status": "planned",
+      "planned_plant": "第二卷（16-22 章：失踪案上报后被压，上级态度暧昧）",
+      "actual_plant": null,
+      "planned_payoff": "第四卷：协调局内部与阿尔登国际的勾连被揭露",
+      "actual_payoff": null,
+      "related_characters": [
+        "关明衡"
+      ],
+      "related_factions": [
+        "协调局",
+        "阿尔登国际亚太分部"
+      ]
+    },
+    {
+      "id": "f005",
+      "type": "setup",
+      "status": "planned",
+      "planned_plant": "第三卷（28-31 章：黑市传出'百面背后有神秘供货商'）",
+      "actual_plant": null,
+      "planned_payoff": "第五卷：商社由传闻变成事实——假组织因越来越多人相信而成为真组织；'命名'=承认既成事实的节点，江湖背景坐实",
+      "actual_payoff": null,
+      "related_characters": [
+        "百面",
+        "神秘买家"
+      ],
+      "related_factions": [
+        "金水物业",
+        "商社"
+      ]
+    },
+    {
+      "id": "f006",
+      "type": "promise",
+      "status": "planned",
+      "planned_plant": "第三卷末（35 章：分身 A 接受阿尔登国际招揽，真投名状）",
+      "actual_plant": null,
+      "planned_payoff": "第四卷：双面棋子——资产撤离协议逼出百面假死（替罪羊反转），组织'事实上的胚胎'成形（无名称）；正式命名'折光'在第五卷",
+      "actual_payoff": null,
+      "related_characters": [
+        "百面",
+        "关明衡"
+      ],
+      "related_factions": [
+        "阿尔登国际亚太分部"
+      ]
+    }
+  ]
+}

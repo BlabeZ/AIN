@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "novel-orchestrator",
+  "share": "disabled",
+  "instructions": ["AGENTS.md"],
+  "mcp": {
+    "memory": {"enabled": false},
+    "browser": {"enabled": false},
+    "database": {"enabled": false}
+  },
+  "permission": {
+    "bash": "deny",
+    "edit": "deny",
+    "webfetch": "deny",
+    "websearch": "deny",
+    "external_directory": {
+      "*": "deny",
+      "/home/tssh/文档/Works/Nov_AI/ANALYSE/**": "allow"
+    }
+  },
+  "agent": {
+    "build": {"disable": true},
+    "plan": {"disable": true},
+    "general": {"disable": true},
+    "explore": {"disable": true}
+  }
+}

@@ -1,0 +1,44 @@
+#!/bin/bash
+# pre-commit hook：提交前一致性审计 + 修订留档强制（D-070/D-071）
+# 安装：bash scripts/install-hooks.sh
+
+cd "$(git rev-parse --show-toplevel)" || exit 1
+
+OUT=$(mktemp)
+python3 scripts/audit.py > "$OUT" 2>&1
+status=$?
+
+if [ $status -ne 0 ]; then
+    cat "$OUT"
+    echo ""
+    echo "=================================================="
+    echo "一致性审计未通过，提交已阻断（D-070 强制层）。"
+    echo "修复后重新提交；确属非文本/规则外变更需强制提交时："
+    echo "  git commit --no-verify"
+    echo "=================================================="
+    rm -f "$OUT"
+    exit 1
+fi
+rm -f "$OUT"
+
+# ---- D-071：修订留档强制 ----
+# 正文/细纲有修改，但 revision_index.jsonl 未随本次提交更新 => 阻断（除非 [no-revlog] 显式豁免）
+COMMIT_MSG=$(cat .git/COMMIT_EDITMSG 2>/dev/null)
+if echo "$COMMIT_MSG" | grep -q "\[no-revlog\]"; then
+    exit 0
+fi
+
+CHANGED=$(git diff --cached --name-only | grep -E '^Novel/chapters/[0-9]{3}\.md$|^Novel/outline/chapters/[0-9]{3}\.md$' || true)
+IDX=$(git diff --cached --name-only | grep -c '^Novel/meta/revision_index\.jsonl$' || true)
+
+if [ -n "$CHANGED" ] && [ "$IDX" -eq 0 ]; then
+    echo ""
+    echo "=================================================="
+    echo "正文/细纲有修改，但 revision_index.jsonl 未随本次提交更新（D-071 强制层）。"
+    echo "请按 D-069 在 meta/revisions/ 新建 rNNNNNN.md 并在索引登记；"
+    echo "确认本次修改无需留档（纯格式/typo 等）时，提交信息加 [no-revlog] 显式豁免。"
+    echo "=================================================="
+    exit 1
+fi
+
+exit 0

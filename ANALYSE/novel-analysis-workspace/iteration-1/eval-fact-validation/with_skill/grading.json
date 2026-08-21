@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "先执行 ground-facts 和 validate-facts，再考虑剧情弧分析",
+      "passed": true,
+      "evidence": "响应明确给出先运行 `ground-facts demo-book`、成功后再运行 `validate-facts demo-book` 的顺序，并规定两者通过后才能进入剧情弧分析。"
+    },
+    {
+      "text": "把首次可疑细节视为 clue candidate 而非已确认伏笔",
+      "passed": true,
+      "evidence": "响应明确写道“首次出现且尚未被后文确认的可疑细节只能标为 `clue_candidate`，不能当作已确认伏笔”。"
+    },
+    {
+      "text": "要求状态变化由原文证据支持并复核低置信度项",
+      "passed": true,
+      "evidence": "响应要求定点复核置信度低于 0.75 的事实和关键状态变化，并删除、修正或降级无原文支持的内容。"
+    },
+    {
+      "text": "明确事实验证未通过时停止在当前阶段",
+      "passed": true,
+      "evidence": "响应报告 `ground-facts` 因原文不存在而失败，随后没有继续运行 `validate-facts`，并明确“停留在事实验证阶段”。"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}

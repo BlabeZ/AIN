@@ -1,0 +1,13 @@
+{
+  "chapter": "001",
+  "revision": "r000021",
+  "source_stage": "manual_revision_1",
+  "target_stage": "hybrid_draft_13",
+  "polish_level": "medium",
+  "focus": ["transition", "character_task", "canon_consistency", "prose"],
+  "backup": ".sumeru/write/original/001_manual_revision_1_20260819.md",
+  "hanzi_count": 1752,
+  "audit_errors": 0,
+  "audit_warnings": 0,
+  "status": "verified"
+}

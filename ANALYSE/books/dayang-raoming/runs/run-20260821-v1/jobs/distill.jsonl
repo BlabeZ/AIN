@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","job_id":"distill-book","stage":"distill","status":"blocked","book_id":"dayang-raoming","depends_on":["analyze-book"],"output_path":"distilled/book_dna.md"}

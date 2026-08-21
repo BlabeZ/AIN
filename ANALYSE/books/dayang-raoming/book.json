@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "book_id": "dayang-raoming",
+  "title": "大王饶命",
+  "author": "会说话的肘子",
+  "status": "ingested",
+  "created_at": "2026-08-21T01:59:32+00:00",
+  "source": {
+    "original_name": "大王饶命.txt",
+    "stored_path": "source/original.txt",
+    "detected_encoding": "utf-8-sig",
+    "normalized_encoding": "utf-8",
+    "sha256": "17977320d61df39d5f9bfdc5b6ac2cdec1cac1af8e4af28bf10de77d9dc067ac",
+    "char_count": 3178293,
+    "chapter_count": 1337,
+    "front_matter_count": 1,
+    "ingested_at": "2026-08-21T01:59:32+00:00"
+  },
+  "updated_at": "2026-08-21T01:59:32+00:00"
+}
